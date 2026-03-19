@@ -1,0 +1,33 @@
+.floating-social {
+  position: fixed;
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 100;
+}
+
+.floating-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  color: var(--text-light);
+  text-decoration: none;
+  transition: var(--transition);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.floating-social a:hover {
+  background: var(--primary);
+  transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+  .floating-social { display: none; }
+}
