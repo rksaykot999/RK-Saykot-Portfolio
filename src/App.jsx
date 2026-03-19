@@ -16,7 +16,7 @@ function ScrollToTop() {
   return null;
 }
 
-const basename = '/RK-Saykot/';
+const basename = '/RK-Saykot-Portfolio/';
 export default function App() {
   return (
     <Router basename={basename}>

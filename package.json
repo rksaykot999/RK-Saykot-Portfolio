@@ -1,9 +1,9 @@
 {
-  "name": "rk-saykot",
+  "name": "rk-saykot-portfolio",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://rksaykot999.github.io/RK-Saykot/",
+  "homepage": "https://rksaykot999.github.io/RK-Saykot-Portfolio/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
