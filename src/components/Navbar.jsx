@@ -21,9 +21,9 @@ export default function Navbar() {
     <header className={scrolled ? 'scrolled' : ''}>
       <div className="container">
         <nav className="navbar">
-          <Link to="//" className="logo">RK <span>Saykot</span></Link>
+          <Link to="/" className="logo">RK <span>Saykot</span></Link>
           <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
-            <li><Link to="//" className={isActive('/') ? 'active' : ''} onClick={closeMenu}>Home</Link></li>
+            <li><Link to="/" className={isActive('/') ? 'active' : ''} onClick={closeMenu}>Home</Link></li>
             <li><Link to="/about" className={isActive('/about') ? 'active' : ''} onClick={closeMenu}>About</Link></li>
             <li><Link to="/skills" className={isActive('/skills') ? 'active' : ''} onClick={closeMenu}>Skills</Link></li>
             <li><Link to="/projects" className={isActive('/projects') ? 'active' : ''} onClick={closeMenu}>Projects</Link></li>
