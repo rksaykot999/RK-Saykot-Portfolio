@@ -27,6 +27,8 @@ jobs:
         run: npm ci
 
       - name: Build production site
+        env:
+          VITE_BASE: /RK-Saykot-Portfolio/
         run: npm run build
 
       - name: Configure GitHub Pages
