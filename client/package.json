@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -m 'Deploy to GitHub Pages' -d dist"
   },
   "dependencies": {
     "react": "^19.2.6",
