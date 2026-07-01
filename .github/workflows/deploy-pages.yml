@@ -29,7 +29,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci --legacy-peer-deps
+        run: npm install --legacy-peer-deps # এখানে npm ci এর বদলে npm install করা হয়েছে
 
       - name: Build production site
         run: npm run build
@@ -37,7 +37,7 @@ jobs:
           VITE_BASE: /RK-Saykot-Portfolio/
 
       - name: Configure GitHub Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v5 # লেটেস্ট v5 এ আপডেট করা হয়েছে
 
       - name: Upload artifact for Pages
         uses: actions/upload-pages-artifact@v3
@@ -46,4 +46,4 @@ jobs:
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4 
+        uses: actions/deploy-pages@v4
