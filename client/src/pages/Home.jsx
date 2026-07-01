@@ -7,6 +7,7 @@ import Marquee from '../components/ui/Marquee';
 import StatsStrip from '../components/ui/StatsStrip';
 import CtaBanner from '../components/ui/CtaBanner';
 import ProjectCard from '../components/cards/ProjectCard';
+import profile from '../assets';
 
 const quicklinks = [
   { to: '/skills', label: 'Skills', d: 'Frontend, backend, mobile, and tools — the working stack.' },
@@ -99,33 +100,10 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Ledger / dossier stat card */}
+          {/* Profile Image */}
           <div className="rv rv-d2 relative">
             <div className="rounded-box border border-base-300 bg-base-100/90 p-6 shadow-xl shadow-base-content/[0.03] backdrop-blur-sm">
-              <div className="mb-1 flex items-center justify-between font-mono text-[0.68rem] uppercase tracking-[0.14em] text-base-content/35">
-                <span>Profile Record</span>
-                <span>#001</span>
-              </div>
-              <hr className="mb-4 border-base-300" />
-              {[
-                ['Role', 'Freelance Web Developer'],
-                ['Stack', 'React · Next.js · Node.js'],
-                ['Mobile', 'Kotlin · Jetpack Compose'],
-                ['Credentials', '21 certifications, 13+ institutes'],
-              ].map(([k, v]) => (
-                <div key={k} className="flex items-center justify-between gap-4 py-3 text-sm">
-                  <span className="text-base-content/45">{k}</span>
-                  <span className="text-right font-medium">{v}</span>
-                </div>
-              ))}
-              <hr className="border-base-300" />
-              <div className="flex items-center justify-between py-3 text-sm">
-                <span className="text-base-content/45">Status</span>
-                <span className="inline-flex items-center gap-1.5 font-medium text-accent">
-                  <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-                  Available for work
-                </span>
-              </div>
+              <img src={profile} alt="" className="h-full w-full object-cover rounded-lg" />
             </div>
           </div>
         </div>
