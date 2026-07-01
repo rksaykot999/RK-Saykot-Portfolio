@@ -2,9 +2,17 @@ import { Low } from 'lowdb';
 import { JSONFile } from 'lowdb/node';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import fs from 'fs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const file = path.join(__dirname, 'data', 'db.json');
+const dataDir = path.join(__dirname, 'data');
+
+// Ensure the data directory exists, otherwise Render will crash because Git ignores empty directories
+if (!fs.existsSync(dataDir)) {
+  fs.mkdirSync(dataDir, { recursive: true });
+}
+
+const file = path.join(dataDir, 'db.json');
 
 const defaultData = {
   skills: [],

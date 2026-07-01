@@ -1,6 +1,18 @@
+# ── Root ──
 node_modules/
-dist/
-.env
-*.log
+
+# ── Client ──
+client/node_modules/
+client/dist/
+client/.env
+client/.env.local
+client/.env.*.local
+
+# ── Server ──
+server/node_modules/
+server/.env
+
+# ── General ──
 .DS_Store
-server/data/db.json
+*.log
+npm-debug.log*
