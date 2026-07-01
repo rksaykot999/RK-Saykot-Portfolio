@@ -1,0 +1,196 @@
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes: ledgerlight --default, ledgerdark --prefersdark;
+}
+
+@plugin "daisyui/theme" {
+  name: "ledgerlight";
+  default: true;
+  prefersdark: false;
+  color-scheme: "light";
+  --color-base-100: #F5F3EE;
+  --color-base-200: #ECE9E1;
+  --color-base-300: #DED8C9;
+  --color-base-content: #0B0F19;
+  --color-primary: #E2492C;
+  --color-primary-content: #FFFAF5;
+  --color-secondary: #1E2A4A;
+  --color-secondary-content: #F5F3EE;
+  --color-accent: #2F6F62;
+  --color-accent-content: #F2FBF8;
+  --color-neutral: #8C8478;
+  --color-neutral-content: #F5F3EE;
+  --color-info: #3B6EA5;
+  --color-info-content: #F5F3EE;
+  --color-success: #2F8F5B;
+  --color-success-content: #F5F3EE;
+  --color-warning: #C98A1D;
+  --color-warning-content: #1A1206;
+  --color-error: #C73B3B;
+  --color-error-content: #F5F3EE;
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+}
+
+@plugin "daisyui/theme" {
+  name: "ledgerdark";
+  default: false;
+  prefersdark: true;
+  color-scheme: "dark";
+  --color-base-100: #0A0D16;
+  --color-base-200: #10141F;
+  --color-base-300: #1A1F2D;
+  --color-base-content: #F1EEE6;
+  --color-primary: #FF7A52;
+  --color-primary-content: #1A0900;
+  --color-secondary: #93A8DE;
+  --color-secondary-content: #0B0F19;
+  --color-accent: #5FBFA8;
+  --color-accent-content: #042A22;
+  --color-neutral: #948C7F;
+  --color-neutral-content: #0B0F19;
+  --color-info: #6FA8DC;
+  --color-info-content: #06101C;
+  --color-success: #6FCB9F;
+  --color-success-content: #04231A;
+  --color-warning: #E3B341;
+  --color-warning-content: #241A03;
+  --color-error: #E2645A;
+  --color-error-content: #260605;
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+}
+
+@theme {
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "IBM Plex Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+  --animate-marquee: marquee 28s linear infinite;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+  ::selection {
+    background: color-mix(in oklch, var(--color-primary) 30%, transparent);
+  }
+  summary {
+    list-style: none;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+}
+
+@layer utilities {
+  /* Graph-paper dot grid — the ledger's signature texture */
+  .bg-dot-grid {
+    background-image: radial-gradient(currentColor 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+
+  /* ── Scroll-reveal, driven by useReveal's IntersectionObserver ── */
+  .rv {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.7s cubic-bezier(.16,1,.3,1), transform 0.7s cubic-bezier(.16,1,.3,1);
+  }
+  .rv.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Directional variants */
+  .rv-left { transform: translateX(-24px); }
+  .rv-left.in { transform: translateX(0); }
+  .rv-right { transform: translateX(24px); }
+  .rv-right.in { transform: translateX(0); }
+  .rv-scale { transform: scale(0.94); }
+  .rv-scale.in { transform: scale(1); }
+  .rv-fade { transform: none; }
+
+  .rv-d1 { transition-delay: 0.06s; }
+  .rv-d2 { transition-delay: 0.12s; }
+  .rv-d3 { transition-delay: 0.18s; }
+  .rv-d4 { transition-delay: 0.24s; }
+  .rv-d5 { transition-delay: 0.30s; }
+  .rv-d6 { transition-delay: 0.36s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rv, .rv-left, .rv-right, .rv-scale {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ── Route / page-content fade-in (App.jsx, per navigation) ── */
+  @keyframes page-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .page-enter {
+    animation: page-in 0.5s cubic-bezier(.16,1,.3,1) both;
+  }
+
+  /* ── Top route-progress bar (RouteProgress.jsx) ── */
+  @keyframes route-progress {
+    0%   { width: 0%; opacity: 1; }
+    60%  { width: 72%; }
+    100% { width: 92%; }
+  }
+  .animate-route-progress {
+    animation: route-progress 0.9s cubic-bezier(.16,1,.3,1) forwards;
+  }
+
+  /* ── Site loader (SiteLoader.jsx) ── */
+  @keyframes loader-bar {
+    0%   { transform: scaleX(0); }
+    70%  { transform: scaleX(0.85); }
+    100% { transform: scaleX(1); }
+  }
+  .animate-loader-bar {
+    transform-origin: left;
+    animation: loader-bar 0.9s cubic-bezier(.65,0,.35,1) forwards;
+  }
+  @keyframes loader-stamp {
+    0%   { opacity: 0; transform: scale(0.7) rotate(-6deg); }
+    55%  { opacity: 1; transform: scale(1.05) rotate(2deg); }
+    100% { opacity: 1; transform: scale(1) rotate(0deg); }
+  }
+  .animate-loader-stamp {
+    animation: loader-stamp 0.6s cubic-bezier(.34,1.56,.64,1) both;
+  }
+  @keyframes loader-fade-out {
+    to { opacity: 0; visibility: hidden; }
+  }
+}
+
