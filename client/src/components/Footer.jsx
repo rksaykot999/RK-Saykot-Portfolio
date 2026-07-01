@@ -111,7 +111,6 @@ export default function Footer() {
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="group inline-flex items-center gap-1.5 transition-colors hover:text-primary"
           >
-            Back to top
             <span className="grid h-6 w-6 place-items-center rounded-full border border-base-300 transition-colors group-hover:border-primary">
               <ArrowUp size={11} />
             </span>

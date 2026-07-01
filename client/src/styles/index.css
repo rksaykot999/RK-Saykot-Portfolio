@@ -1,34 +1,34 @@
 @import "tailwindcss";
 
 @plugin "daisyui" {
-  themes: ledgerlight --default, ledgerdark --prefersdark;
+  themes: prolight --default, prodark --prefersdark;
 }
 
 @plugin "daisyui/theme" {
-  name: "ledgerlight";
+  name: "prolight";
   default: true;
   prefersdark: false;
   color-scheme: "light";
-  --color-base-100: #F5F3EE;
-  --color-base-200: #ECE9E1;
-  --color-base-300: #DED8C9;
-  --color-base-content: #0B0F19;
-  --color-primary: #E2492C;
-  --color-primary-content: #FFFAF5;
-  --color-secondary: #1E2A4A;
-  --color-secondary-content: #F5F3EE;
-  --color-accent: #2F6F62;
-  --color-accent-content: #F2FBF8;
-  --color-neutral: #8C8478;
-  --color-neutral-content: #F5F3EE;
-  --color-info: #3B6EA5;
-  --color-info-content: #F5F3EE;
-  --color-success: #2F8F5B;
-  --color-success-content: #F5F3EE;
-  --color-warning: #C98A1D;
-  --color-warning-content: #1A1206;
-  --color-error: #C73B3B;
-  --color-error-content: #F5F3EE;
+  --color-base-100: #FFFFFF;
+  --color-base-200: #FAFAFA;
+  --color-base-300: #EAEAEA;
+  --color-base-content: #171717;
+  --color-primary: #000000;
+  --color-primary-content: #FFFFFF;
+  --color-secondary: #666666;
+  --color-secondary-content: #FFFFFF;
+  --color-accent: #333333;
+  --color-accent-content: #FFFFFF;
+  --color-neutral: #888888;
+  --color-neutral-content: #FFFFFF;
+  --color-info: #3B82F6;
+  --color-info-content: #FFFFFF;
+  --color-success: #10B981;
+  --color-success-content: #FFFFFF;
+  --color-warning: #F59E0B;
+  --color-warning-content: #000000;
+  --color-error: #EF4444;
+  --color-error-content: #FFFFFF;
   --radius-selector: 0.5rem;
   --radius-field: 0.5rem;
   --radius-box: 1rem;
@@ -40,30 +40,30 @@
 }
 
 @plugin "daisyui/theme" {
-  name: "ledgerdark";
+  name: "prodark";
   default: false;
   prefersdark: true;
   color-scheme: "dark";
-  --color-base-100: #0A0D16;
-  --color-base-200: #10141F;
-  --color-base-300: #1A1F2D;
-  --color-base-content: #F1EEE6;
-  --color-primary: #FF7A52;
-  --color-primary-content: #1A0900;
-  --color-secondary: #93A8DE;
-  --color-secondary-content: #0B0F19;
-  --color-accent: #5FBFA8;
-  --color-accent-content: #042A22;
-  --color-neutral: #948C7F;
-  --color-neutral-content: #0B0F19;
-  --color-info: #6FA8DC;
-  --color-info-content: #06101C;
-  --color-success: #6FCB9F;
-  --color-success-content: #04231A;
-  --color-warning: #E3B341;
-  --color-warning-content: #241A03;
-  --color-error: #E2645A;
-  --color-error-content: #260605;
+  --color-base-100: #000000;
+  --color-base-200: #0A0A0A;
+  --color-base-300: #1F1F1F;
+  --color-base-content: #EDEDED;
+  --color-primary: #FFFFFF;
+  --color-primary-content: #000000;
+  --color-secondary: #A1A1AA;
+  --color-secondary-content: #000000;
+  --color-accent: #D4D4D8;
+  --color-accent-content: #000000;
+  --color-neutral: #737373;
+  --color-neutral-content: #000000;
+  --color-info: #3B82F6;
+  --color-info-content: #FFFFFF;
+  --color-success: #10B981;
+  --color-success-content: #FFFFFF;
+  --color-warning: #F59E0B;
+  --color-warning-content: #000000;
+  --color-error: #EF4444;
+  --color-error-content: #FFFFFF;
   --radius-selector: 0.5rem;
   --radius-field: 0.5rem;
   --radius-box: 1rem;
@@ -75,9 +75,9 @@
 }
 
 @theme {
-  --font-display: "Space Grotesk", sans-serif;
-  --font-body: "IBM Plex Sans", sans-serif;
-  --font-mono: "IBM Plex Mono", monospace;
+  --font-display: "Outfit", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
   --animate-marquee: marquee 28s linear infinite;
 }
 

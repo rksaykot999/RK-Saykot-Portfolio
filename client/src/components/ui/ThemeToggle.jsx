@@ -4,12 +4,12 @@ import { Sun, Moon } from 'lucide-react';
 const STORAGE_KEY = 'saykot-theme';
 
 function getInitialTheme() {
-  if (typeof window === 'undefined') return 'ledgerlight';
+  if (typeof window === 'undefined') return 'prolight';
   const saved = localStorage.getItem(STORAGE_KEY);
   if (saved) return saved;
   return window.matchMedia('(prefers-color-scheme: dark)').matches
-    ? 'ledgerdark'
-    : 'ledgerlight';
+    ? 'prodark'
+    : 'prolight';
 }
 
 /**
@@ -24,12 +24,12 @@ export default function ThemeToggle({ className = '' }) {
     localStorage.setItem(STORAGE_KEY, theme);
   }, [theme]);
 
-  const isDark = theme === 'ledgerdark';
+  const isDark = theme === 'prodark';
 
   return (
     <button
       type="button"
-      onClick={() => setTheme(isDark ? 'ledgerlight' : 'ledgerdark')}
+      onClick={() => setTheme(isDark ? 'prolight' : 'prodark')}
       aria-label={`Switch to ${isDark ? 'light' : 'dark'} record`}
       className={`group inline-flex items-center gap-2 rounded-full border border-base-300 bg-base-100/60 px-3 py-1.5 font-mono text-[0.7rem] uppercase tracking-[0.12em] text-base-content/70 transition-colors hover:border-primary/50 hover:text-primary ${className}`}
     >
