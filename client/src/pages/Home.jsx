@@ -7,7 +7,8 @@ import Marquee from '../components/ui/Marquee';
 import StatsStrip from '../components/ui/StatsStrip';
 import CtaBanner from '../components/ui/CtaBanner';
 import ProjectCard from '../components/cards/ProjectCard';
-import profile from '../assets';
+import profile from '../assets/My Profile.png';
+
 
 const quicklinks = [
   { to: '/skills', label: 'Skills', d: 'Frontend, backend, mobile, and tools — the working stack.' },
