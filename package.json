@@ -1,23 +1,29 @@
 {
-  "name": "saykot-portfolio",
-  "version": "1.0.0",
-  "description": "Muhammad Saykot's portfolio — monorepo (Vite + React frontend, Express backend)",
-  "author": "Muhammad Saykot",
-  "license": "ISC",
+  "name": "rk-saykot-portfolio",
   "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "homepage": "https://rksaykot999.github.io/RK-Saykot-Portfolio/",
   "scripts": {
-    "dev": "concurrently --names \"CLIENT,SERVER\" --prefix-colors \"cyan,yellow\" \"npm run dev:client\" \"npm run dev:server\"",
-    "dev:client": "cd client && npm run dev",
-    "dev:server": "cd server && npm run dev",
-    "build": "cd client && npm run build",
-    "preview": "cd client && npm run preview",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -m \"Deploy to GitHub Pages\" -d client/dist",
-    "seed": "cd server && npm run seed",
-    "install:all": "npm install && cd client && npm install && cd ../server && npm install"
+    "deploy": "gh-pages -d dist -f"
+  },
+  "dependencies": {
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-intersection-observer": "^9.5.3",
+    "react-router-dom": "^6.22.0",
+    "react-scroll": "^1.9.0",
+    "react-type-animation": "^3.2.0"
   },
   "devDependencies": {
-    "concurrently": "^9.1.2",
-    "gh-pages": "^6.3.0"
+    "@vitejs/plugin-react": "^4.2.1",
+    "gh-pages": "^6.3.0",
+    "vite": "^5.1.4"
   }
 }

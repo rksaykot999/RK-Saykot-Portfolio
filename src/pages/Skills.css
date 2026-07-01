@@ -1,0 +1,99 @@
+.skills-overview { background: var(--dark-bg); }
+
+.skills-intro { text-align: center; max-width: 800px; margin: 0 auto 50px; }
+.skills-intro p { color: var(--text-gray); margin-top: 20px; }
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.skill-category-card {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  transition: var(--transition);
+}
+
+.skill-category-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.category-icon {
+  width: 50px;
+  height: 50px;
+  background: rgba(123,92,244,0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-icon i { font-size: 1.4rem; color: var(--primary); }
+.category-header h3 { font-size: 1.2rem; }
+
+.skill-row { margin-bottom: 16px; }
+
+.skill-row-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+}
+
+.skill-bar {
+  height: 8px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  border-radius: 4px;
+}
+
+/* Tech Stack */
+.tech-stack { background: var(--secondary); }
+.tech-subtitle { color: var(--text-gray); margin: 15px 0 40px; }
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 20px;
+}
+
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 25px 15px;
+  background: var(--card-bg);
+  border-radius: 15px;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: var(--transition);
+  cursor: default;
+}
+
+.tech-item:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.tech-item i { font-size: 2.5rem; }
+.tech-item span { font-size: 0.85rem; font-weight: 500; text-align: center; }
