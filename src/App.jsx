@@ -16,7 +16,10 @@ function ScrollToTop() {
   return null;
 }
 
-const basename = '/RK-Saykot-Portfolio/';
+const rawBase = import.meta.env.BASE_URL;
+const basename = rawBase.endsWith('/') && rawBase !== '/' 
+  ? rawBase.slice(0, -1) 
+  : rawBase;
 export default function App() {
   return (
     <Router basename={basename}>
